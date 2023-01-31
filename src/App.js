@@ -11,13 +11,34 @@ function Hello(){
 }
 
 function App() {
-  const [showing, setShowing] = useState(false);
-  const onClick = () => setShowing((prev) => !prev);
+  const [toDo, setToDo] = useState("");
+  const [toDos, setToDos] = useState([]);
+  const onChange = (e) => setToDo(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if(toDo === ""){
+      return;
+    }
+    
+    setToDos((currentDos) => [toDo, ...currentDos]);
+    setToDo("");
+  }
+  console.log("toDos",toDos)
 
   return (
     <div>
-      {showing ? <Hello/> : null}
-      <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
+      <h1>My To-Do ({toDos.length})</h1>
+      <form onSubmit={onSubmit}>
+        <input 
+          type="text"
+          onChange = {onChange}
+          value={toDo}
+          placeholder="Whire your to do...!"
+        >
+        </input>
+        <button>Add To Do</button>
+
+      </form>
     </div>
   )
   
