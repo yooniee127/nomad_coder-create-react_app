@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/nomad_coder-create-react_app/static/js/main.fa36e3a2.js",
+    "index.html": "/nomad_coder-create-react_app/index.html",
+    "main.fa36e3a2.js.map": "/nomad_coder-create-react_app/static/js/main.fa36e3a2.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fa36e3a2.js"
+  ]
+}
